@@ -1,7 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Den
- * Date: 29.05.2016
- * Time: 18:45
- */
+
+require __DIR__ . '/../class/class_DB.php';
+
+$DataBase = new DataBase('news');

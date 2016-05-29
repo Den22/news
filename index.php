@@ -1,7 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Den
- * Date: 29.05.2016
- * Time: 18:37
- */
+
+
+
+
+require_once __DIR__ . 'views/index.php';
