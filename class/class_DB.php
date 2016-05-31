@@ -18,11 +18,11 @@ class DataBase
         mysqli_query($this->link, $sql);
     }
 
-    public function sql_query($sql)
+    public function sql_query($sql, $class = 'stdClass')
     {
         $ret = [];
         if ($res = mysqli_query($this->link, $sql)) {
-            while ($row = mysqli_fetch_assoc($res)) {
+            while ($row = mysqli_fetch_object($res, $class)) {
                 $ret[] = $row;
             }
         } else {

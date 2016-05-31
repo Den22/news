@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . '/models/news.php';
+require_once __DIR__ . '/models/news.php';
 
 $news->add_News(
     $_POST['title'],

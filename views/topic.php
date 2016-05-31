@@ -11,10 +11,12 @@
     <div><a href="/views/add.php">Добавить новость</a></div>
 </header>
 <main>
-    <h2><?php echo $topic['title'] ?></h2>
-    <div><?php echo $topic['text'] ?></div>
-    <div>Автор: <?php echo $topic['author'] ?></div>
-    <div>Время публикации: <?php echo $topic['datetime'] ?></div>
+    <?php if (!empty($topic)): ?>
+        <h2><?php echo $topic->title ?></h2>
+        <div><?php echo $topic->text ?></div>
+        <div>Автор: <?php echo $topic->author ?></div>
+        <div>Время публикации: <?php echo $topic->datetime ?></div>
+    <?php endif; ?>
 </main>
 <footer></footer>
 </body>
