@@ -15,7 +15,7 @@ class DataBase
 
     public function sql_exec($sql)
     {
-        mysqli_query($this->link, $sql);
+        return mysqli_query($this->link, $sql);
     }
 
     public function sql_query($sql, $class = 'stdClass')

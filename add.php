@@ -1,8 +1,11 @@
 <?php
 
-require_once __DIR__ . '/models/news.php';
+require_once __DIR__ . '/models/News.php';
+require_once __DIR__ . '/classes/DataBase.php';
 
-$news->add_News(
+$news = new News;
+
+$news->addNews(
     $_POST['title'],
     $_POST['text'],
     $_POST['author']

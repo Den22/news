@@ -1,8 +1,10 @@
 <?php
 
-require_once __DIR__ . '/models/news.php';
+require_once __DIR__ . '/models/News.php';
+require_once __DIR__ . '/classes/DataBase.php';
 
-$topic_id = $_GET['topic_id'];
-$topic = $news->get_News($topic_id);
+
+$id = $_GET['id'];
+$topic = News::getOne($id);
 
 include __DIR__ . '/views/topic.php';

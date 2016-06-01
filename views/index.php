@@ -16,11 +16,11 @@
             <th>Заголовок</th>
             <th>Дата и время</th>
         </tr>
-        <?php foreach ($newsInfo as $new): ?>
+        <?php foreach ($items as $item): ?>
             <tr>
-                <td><?php echo $new->author ?></td>
-                <td><a href="<?php echo '/topic.php?topic_id=' . $new->id ?>"><?php echo $new->title ?></a></td>
-                <td><?php echo $new->datetime ?></td>
+                <td><?php echo $item->author ?></td>
+                <td><a href="<?php echo '/topic.php?id=' . $item->id ?>"><?php echo $item->title ?></a></td>
+                <td><?php echo $item->datetime ?></td>
             </tr>
         <?php endforeach; ?>
     </table>
