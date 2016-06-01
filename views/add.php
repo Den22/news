@@ -15,7 +15,7 @@ session_start();
     </header>
     <main>
         <div class="error"><?php echo $_SESSION['error'] ?></div>
-        <form action="/add.php" method="post">
+        <form action="/index.php?ctrl=Admin&act=AddNews" method="post">
             <table>
                 <tr>
                     <td><input type="text" name="title" id="title"></td>
