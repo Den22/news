@@ -1,8 +1,5 @@
 <?php
 
-require_once __DIR__ . '/../models/News.php';
-require_once __DIR__ . '/../classes/DataBase.php';
-
 class AdminController
 {
     public function actionAddNews()
