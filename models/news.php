@@ -1,8 +1,5 @@
 <?php
 
-require_once __DIR__ . '/../classes/AbstractModel.php';
-
-
 class News
     extends AbstractModel
 {
@@ -10,7 +7,7 @@ class News
     public $datetime;
     protected static $table = 'news';
     protected static $class = 'News';
-
+    protected static $arg = 'datetime';
 
     public function addNews($title, $text, $author)
     {

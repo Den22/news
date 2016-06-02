@@ -1,13 +1,11 @@
 <?php
 
-require_once __DIR__ . '/../classes/DataBase.php';
-require_once __DIR__ . '/../models/News.php';
-
 class NewsController
 {
     public function actionAll()
     {
         $items = News::getAll();
+        $items = News::sortByDateTime($items);
         include __DIR__ . '/../views/all.php';
     }
 
