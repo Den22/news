@@ -1,7 +1,6 @@
 <?php
 session_start();
 ?>
-
     <!DOCTYPE html>
     <html lang="ru">
     <head>
@@ -11,11 +10,11 @@ session_start();
     <body>
     <header>
         <h1>News ticker</h1>
-        <div><a href="/index.php">Главная</a></div>
+        <div><a href="/News/AllSort">Главная</a></div>
     </header>
     <main>
         <div class="error"><?php echo $_SESSION['error'] ?></div>
-        <form action="/index.php?ctrl=Admin&act=AddNews" method="post">
+        <form action="/Admin/AddNews" method="post">
             <table>
                 <tr>
                     <td><input type="text" name="title" id="title"></td>

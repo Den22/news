@@ -7,15 +7,15 @@
 <body>
 <header>
     <h1>News ticker</h1>
-    <div><a href="/index.php">Главная</a></div>
-    <div><a href="/views/add.php">Добавить новость</a></div>
+    <div><a href="/News/AllSort">Главная</a></div>
+    <div><a href="/Admin/AddView">Добавить новость</a></div>
 </header>
 <main>
-    <?php if (!empty($topic)): ?>
-        <h2><?php echo $topic->title ?></h2>
-        <div><?php echo $topic->text ?></div>
-        <div>Автор: <?php echo $topic->author ?></div>
-        <div>Время публикации: <?php echo $topic->datetime ?></div>
+    <?php if (!empty($item)): ?>
+        <h2><?php echo $item->title ?></h2>
+        <div><?php echo $item->text ?></div>
+        <div>Автор: <?php echo $item->author ?></div>
+        <div>Время публикации: <?php echo $item->datetime ?></div>
     <?php endif; ?>
 </main>
 <footer></footer>

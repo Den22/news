@@ -7,7 +7,7 @@
 <body>
 <header>
     <h1>News ticker</h1>
-    <div><a href="/views/add.php">Добавить новость</a></div>
+    <div><a href="/Admin/AddView">Добавить новость</a></div>
 </header>
 <main>
     <table>
@@ -22,7 +22,7 @@
         ?>
                 <tr>
                     <td><?php echo $item->author ?></td>
-                    <td><a href="<?php echo '/index.php?ctrl=News&act=One&id=' . $item->id ?>"><?php echo $item->title ?></a></td>
+                    <td><a href="<?php echo '/News/One/' . $item->id ?>"><?php echo $item->title ?></a></td>
                     <td><?php echo $item->datetime ?></td>
                 </tr>
         <?php

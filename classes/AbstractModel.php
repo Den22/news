@@ -26,17 +26,17 @@ abstract class AbstractModel
         return $res['0'];
     }
 
-    public static function sortByDateTime($arr)
-    {
-        function fs($a, $b)
-        {
-            if ($a->datetime == $b->datetime) {
-                return 0;
-            }
-            return ($a->datetime > $b->datetime) ? -1 : 1;
-        }
-        usort($arr, 'fs');
-        return $arr;
-    }
+//    public static function sortByDateTime($arr)
+//    {
+//        function fs($a, $b)
+//        {
+//            if ($a->datetime == $b->datetime) {
+//                return 0;
+//            }
+//            return ($a->datetime > $b->datetime) ? -1 : 1;
+//        }
+//        usort($arr, 'fs');
+//        return $arr;
+//    }
 
 }

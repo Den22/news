@@ -9,7 +9,7 @@ class News
     protected static $class = 'News';
     protected static $arg = 'datetime';
 
-    public function addNews($title, $text, $author)
+    public function addNews()
     {
         $db = new DataBase(self::$table);
         $this->datetime = date("Y-m-d H:i:s");
@@ -17,11 +17,17 @@ class News
             INSERT INTO news
             (title, text, author, datetime)
             VALUES
-            ('" . $title . "',
-            '" . $text . "',
-            '" . $author . "',
+            ('" . $_POST['title'] . "',
+            '" . $_POST['text'] . "',
+            '" . $_POST['author'] . "',
             '" . $this->datetime . "')
         ";
         $db->sql_exec($sql);
+    }
+    public static function getAllSortByDatetime()
+    {
+        $db = new DataBase(self::$table);
+        $sql = ' SELECT * FROM ' . self::$table . ' ORDER BY datetime DESC';
+        return $db->sql_query($sql, self::$class);
     }
 }
