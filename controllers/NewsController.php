@@ -4,20 +4,27 @@ class NewsController
 {
     public function actionAll()
     {
-        $items = News::getAll();
-        include __DIR__ . '/../views/all.php';
+        $news = News::getAll();
+        $view = new View();
+        $view->items = $news;
+        $view->display('news/all.php');
     }
+
     public function actionAllSort()
     {
-        $items = News::getAllSortByDatetime();
+        $news = News::getAllSortByDatetime();
         //$items = News::sortByDateTime($items);
-        include __DIR__ . '/../views/all.php';
+        $view = new View();
+        $view->items = $news;
+        $view->display('news/all.php');
     }
 
     public function actionOne()
     {
         $id = $_GET['id'];
-        $item = News::getOne($id);
-        include __DIR__ . '/../views/one.php';
+        $news = News::getOne($id);
+        $view = new View();
+        $view->item = $news;
+        $view->display('news/one.php');
     }
 }

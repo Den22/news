@@ -10,7 +10,7 @@ session_start();
     <body>
     <header>
         <h1>News ticker</h1>
-        <div><a href="/News/AllSort">Главная</a></div>
+        <div><a href="/">Главная</a></div>
     </header>
     <main>
         <div class="error"><?php echo $_SESSION['error'] ?></div>

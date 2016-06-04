@@ -17,17 +17,17 @@
             <th>Дата и время</th>
         </tr>
         <?php
-            if (!empty($items)):
-                foreach ($items as $item):
-        ?>
+        if (!empty($items)):
+            foreach ($items as $item):
+                ?>
                 <tr>
                     <td><?php echo $item->author ?></td>
                     <td><a href="<?php echo '/News/One/' . $item->id ?>"><?php echo $item->title ?></a></td>
                     <td><?php echo $item->datetime ?></td>
                 </tr>
-        <?php
-                endforeach;
-            endif;
+                <?php
+            endforeach;
+        endif;
         ?>
     </table>
 </main>
