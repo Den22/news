@@ -7,7 +7,7 @@
 <body>
 <header>
     <h1>News ticker</h1>
-    <div><a href="/Admin/AddView">Добавить новость</a></div>
+    <div><a href="/Admin/ViewAdd">Добавить новость</a></div>
 </header>
 <main>
     <table>

@@ -8,7 +8,7 @@
 <header>
     <h1>News ticker</h1>
     <div><a href="/">Главная</a></div>
-    <div><a href="/Admin/AddView">Добавить новость</a></div>
+    <div><a href="/Admin/ViewAdd">Добавить новость</a></div>
 </header>
 <main>
     <?php if (!empty($item)): ?>

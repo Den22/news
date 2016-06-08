@@ -13,15 +13,13 @@ class NewsController
     public function actionAllSort()
     {
         $news = News::getAllSortByDatetime();
-        //$items = News::sortByDateTime($items);
         $view = new View();
         $view->items = $news;
         $view->display('news/all.php');
     }
 
-    public function actionOne()
+    public function actionOne($id)
     {
-        $id = $_GET['id'];
         $news = News::getOne($id);
         $view = new View();
         $view->item = $news;

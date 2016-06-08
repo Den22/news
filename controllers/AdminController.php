@@ -6,10 +6,11 @@ class AdminController
     {
         $news = new News;
         $news->addNews();
-        header('Location: /News/AllSort');
+        $controller = new NewsController;
+        $controller->actionAllSort();
     }
 
-    public function actionAddView()
+    public function actionViewAdd()
     {
         $view = new View();
         $view->display('news/add.php');
