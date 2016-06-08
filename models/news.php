@@ -7,7 +7,6 @@ class News
     public $datetime;
     protected static $table = 'news';
     protected static $class = 'News';
-    protected static $arg = 'datetime';
 
     public function addNews()
     {

@@ -15,6 +15,7 @@ class NewsController
         $news = News::getAllSortByDatetime();
         $view = new View();
         $view->items = $news;
+
         $view->display('news/all.php');
     }
 
