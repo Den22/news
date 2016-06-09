@@ -10,7 +10,7 @@ class News
 
     public function addNews()
     {
-        $db = new DataBase(self::$table);
+        $db = new DB();
         $this->datetime = date("Y-m-d H:i:s");
         $sql = "
             INSERT INTO news
@@ -25,7 +25,7 @@ class News
     }
     public static function getAllSortByDatetime()
     {
-        $db = new DataBase(self::$table);
+        $db = new DB(self::$table);
         $sql = ' SELECT * FROM ' . self::$table . ' ORDER BY datetime DESC';
         return $db->sql_query($sql, self::$class);
     }

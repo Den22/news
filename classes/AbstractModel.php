@@ -9,14 +9,14 @@ abstract class AbstractModel
 
     public static function getAll()
     {
-        $db = new DataBase(static::$table);
+        $db = new DB();
         $sql = ' SELECT * FROM ' . static::$table;
         return $db->sql_query($sql, static::$class);
     }
 
     public static function getOne($id)
     {
-        $db = new DataBase(static::$table);
+        $db = new DB();
         $sql = "
             SELECT *
             FROM " . static::$table . "
@@ -25,7 +25,4 @@ abstract class AbstractModel
         $res = $db->sql_query($sql, static::$class);
         return $res['0'];
     }
-
-
-
 }
