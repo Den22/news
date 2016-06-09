@@ -3,47 +3,24 @@
 class DB
 {
     private $dbh;
+    public $className = 'stdClass';
 
     public function __construct()
     {
-        $dsb = 'mysql:dbname=news;host=localhost';
-        $this->dbh = new PDO ($dsb, 'root', '');
+        $this->dbh = new PDO ('mysql:dbname=news;host=localhost', 'root', '');
     }
 
-    public function query($sql, $params=[])
+    public function query($sql, $params = [])
     {
         $sth = $this->dbh->prepare($sql);
         $sth->execute($params);
-        return $sth->fetchAll(PDO::FETCH_OBJ);
+        return $sth->fetchAll(PDO::FETCH_CLASS, $this->className);
+    }
+
+    public function execute($sql, $params = [])
+    {
+        $sth = $this->dbh->prepare($sql);
+        return $sth->execute($params);
+
     }
 }
-/*
-protected $link;
-
-public function __construct($bdName = 'news', $login = 'root', $password = '')
-{
-    $this->link = mysqli_connect('localhost', $login, $password, $bdName);
-    if (mysqli_connect_errno()) {
-        $_SESSION['error'] = "Подключение невозможно: " . mysqli_connect_error();
-        exit;
-    }
-}
-
-public function sql_exec($sql)
-{
-    return mysqli_query($this->link, $sql);
-}
-
-public function sql_query($sql, $class = 'stdClass')
-{
-    $ret = [];
-    if ($res = mysqli_query($this->link, $sql)) {
-        while ($row = mysqli_fetch_object($res, $class)) {
-            $ret[] = $row;
-        }
-    } else {
-        return false;
-    }
-    return $ret;
-}
-*/

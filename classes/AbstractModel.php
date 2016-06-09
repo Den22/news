@@ -2,27 +2,26 @@
 
 abstract class AbstractModel
 {
-    public $title;
-    public $text;
-    protected static $table;
-    protected static $class;
-
-    public static function getAll()
+    static protected $table;
+    public static $column;
+    public static function findAll()
     {
         $db = new DB();
-        $sql = ' SELECT * FROM ' . static::$table;
-        return $db->sql_query($sql, static::$class);
+        $db->className = get_called_class();
+        $sql = 'SELECT * FROM ' . static::$table;
+        return $db->query($sql);
     }
 
-    public static function getOne($id)
+    public static function findOneByPk($id)
     {
         $db = new DB();
-        $sql = "
-            SELECT *
-            FROM " . static::$table . "
-            WHERE id = '" . $id . "'
-        ";
-        $res = $db->sql_query($sql, static::$class);
-        return $res['0'];
+        $db->className = get_called_class();
+        $sql = 'SELECT * FROM ' . static::$table . ' WHERE id=:id';
+        return $db->query($sql, [':id' => $id])[0];
+    }
+
+    public function insert()
+    {
+        $time= '1:29';
     }
 }

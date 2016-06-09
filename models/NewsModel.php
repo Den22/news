@@ -1,12 +1,13 @@
 <?php
 
-class News
+class NewsModel
     extends AbstractModel
 {
-    public $author;
-    public $datetime;
     protected static $table = 'news';
-    protected static $class = 'News';
+//    public $title;
+//    public $text;
+//    public $author;
+//    public $datetime;
 
     public function addNews()
     {
@@ -22,11 +23,5 @@ class News
             '" . $this->datetime . "')
         ";
         $db->sql_exec($sql);
-    }
-    public static function getAllSortByDatetime()
-    {
-        $db = new DB(self::$table);
-        $sql = ' SELECT * FROM ' . self::$table . ' ORDER BY datetime DESC';
-        return $db->sql_query($sql, self::$class);
     }
 }
