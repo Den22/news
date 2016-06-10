@@ -3,7 +3,18 @@
 abstract class AbstractModel
 {
     static protected $table;
-    public static $column;
+    public $data = [];
+
+    public function __set($k, $v)
+    {
+        $this->data[$k] = $v;
+    }
+
+    public function __get($k)
+    {
+        return $this->data[$k];
+    }
+
     public static function findAll()
     {
         $db = new DB();
@@ -16,12 +27,33 @@ abstract class AbstractModel
     {
         $db = new DB();
         $db->className = get_called_class();
-        $sql = 'SELECT * FROM ' . static::$table . ' WHERE id=:id';
+        $sql = 'SELECT * FROM ' . static::$table . ' WHERE id = :id';
         return $db->query($sql, [':id' => $id])[0];
+    }
+
+    public static function findByColumn($column, $value)
+    {
+        $db = new DB();
+        $db->className = get_called_class();
+        $sql = 'SELECT * FROM ' . static::$table . ' WHERE ' . $column . ' = :value';
+        return $db->query($sql, [':value' => $value]);
     }
 
     public function insert()
     {
-        $time= '1:29';
+        $cols = array_keys($this->data);
+        $data = [];
+        foreach ($cols as $col) {
+            $data[':' . $col] = $this->data[$col];
+        }
+        $sql = '
+            INSERT INTO ' . static::$table . '
+            (' . implode(', ', $cols) . ')
+            VALUES
+            (' . implode(', ', array_keys($data)) . ')
+        ';
+
+        $db = new DB();
+        $db->execute($sql, $data);
     }
 }
