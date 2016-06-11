@@ -8,8 +8,7 @@ class AdminController
         $article->data = $_POST;
         $article->data['datetime'] = date("Y-m-d H:i:s");
         $article->insert();
-        $controller = new NewsController;
-        $controller->actionAll();
+        header('Location: /news/one/' . $article->id);
     }
 
     public function actionViewAdd()

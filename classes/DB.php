@@ -2,7 +2,7 @@
 
 class DB
 {
-    private $dbh;
+    public $dbh;
     public $className = 'stdClass';
 
     public function __construct()
