@@ -4,6 +4,7 @@ abstract class AbstractModel
 {
     static protected $table;
     public $data = [];
+    public $id;
 
     public function __set($k, $v)
     {
@@ -47,13 +48,19 @@ abstract class AbstractModel
             $data[':' . $col] = $this->data[$col];
         }
         $sql = '
-            INSERT INTO ' . static::$table . '
-            (' . implode(', ', $cols) . ')
+            INSERT INTO ' . static::$table . "
+            (" . implode(', ', $cols) . ')
             VALUES
             (' . implode(', ', array_keys($data)) . ')
         ';
 
         $db = new DB();
         $db->execute($sql, $data);
+        $this->id = $db->dbh->lastInsertId();
+    }
+
+    public function update()
+    {
+        
     }
 }
