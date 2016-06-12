@@ -10,18 +10,18 @@
     <div><a href="/">Главная</a></div>
 </header>
 <main>
-    <form action="/Admin/AddNews" method="post">
+    <form action="<?php echo '/Admin/UpdateNews/' . $item->id ?>" method="post">
         <table>
             <tr>
-                <td><input type="text" name="title" id="title"></td>
+                <td><input type="text" name="title" id="title" value="<?php echo $item->title ?>"></td>
                 <td><label for="title">Заголовок</label><br></td>
             </tr>
             <tr>
-                <td><textarea name="text" id="text"></textarea></td>
+                <td><textarea name="text" id="text" placeholder="<?php echo $item->text ?>"></textarea></td>
                 <td><label for="text">Текст</label><br></td>
             </tr>
             <tr>
-                <td><input type="text" name="author" id="author"></td>
+                <td><input type="text" name="author" id="author" value="<?php echo $item->author ?>"></td>
                 <td><label for="author">Автор</label><br></td>
             </tr>
             <tr>

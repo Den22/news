@@ -48,8 +48,8 @@ abstract class AbstractModel
             $data[':' . $col] = $this->data[$col];
         }
         $sql = '
-            INSERT INTO ' . static::$table . "
-            (" . implode(', ', $cols) . ')
+            INSERT INTO ' . static::$table . '
+            (' . implode(', ', $cols) . ')
             VALUES
             (' . implode(', ', array_keys($data)) . ')
         ';
@@ -59,8 +59,23 @@ abstract class AbstractModel
         $this->id = $db->dbh->lastInsertId();
     }
 
-    public function update()
+    public function update($id)
     {
-        
+        $cols = array_keys($this->data);
+        $data = [];
+        $upt = [];
+        foreach ($cols as $col) {
+            $data[':' . $col] = $this->data[$col];
+            $upt[] = $col . '= :' . $col;
+        }
+        $sql = '
+            UPDATE ' . static::$table . '
+            SET
+            ' . implode(', ', $upt) . '
+            WHERE id = :id
+        ';
+        $data[':id'] = $id;
+        $db = new DB();
+        $db->execute($sql, $data);
     }
 }

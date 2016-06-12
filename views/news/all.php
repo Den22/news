@@ -24,6 +24,7 @@
                     <td><?php echo $item->author ?></td>
                     <td><a href="<?php echo '/News/One/' . $item->id ?>"><?php echo $item->title ?></a></td>
                     <td><?php echo $item->datetime ?></td>
+                    <td><a href="<?php echo '/Admin/ViewUpdate/' . $item->id ?>">Изменить</a></td>
                 </tr>
                 <?php
             endforeach;
