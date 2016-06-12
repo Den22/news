@@ -7,7 +7,7 @@
 <body>
 <header>
     <h1>News ticker</h1>
-    <div><a href="/Admin/ViewAdd">Добавить новость</a></div>
+    <div><a href="/News/ShowAddForm">Добавить новость</a></div>
 </header>
 <main>
     <table>
@@ -24,7 +24,8 @@
                     <td><?php echo $item->author ?></td>
                     <td><a href="<?php echo '/News/One/' . $item->id ?>"><?php echo $item->title ?></a></td>
                     <td><?php echo $item->datetime ?></td>
-                    <td><a href="<?php echo '/Admin/ViewUpdate/' . $item->id ?>">Изменить</a></td>
+                    <td><a href="<?php echo '/News/ShowUpdateForm/' . $item->id ?>">Изменить</a></td>
+                    <td><a href="<?php echo '/Admin/DeleteNews/' . $item->id ?>">Удалить</a></td>
                 </tr>
                 <?php
             endforeach;

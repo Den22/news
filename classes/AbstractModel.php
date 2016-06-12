@@ -59,7 +59,7 @@ abstract class AbstractModel
         $this->id = $db->dbh->lastInsertId();
     }
 
-    public function update($id)
+    public function updateByPk($id)
     {
         $cols = array_keys($this->data);
         $data = [];
@@ -77,5 +77,16 @@ abstract class AbstractModel
         $data[':id'] = $id;
         $db = new DB();
         $db->execute($sql, $data);
+    }
+
+    public function deleteByPk($id)
+    {
+        $sql = '
+            DELETE
+            FROM ' . static::$table . '
+            WHERE id = :id
+        ';
+        $db = new DB();
+        $db->execute($sql, [':id' => $id]);
     }
 }
