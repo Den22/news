@@ -16,14 +16,16 @@ class AdminController
         $news = new NewsModel;
         $news->data = $_POST;
         $news->data['datetime'] = date("Y-m-d H:i:s");
-        $news->updateByPk($id);
+        $news->id = $id;
+        $news->update();
         header('Location: /news/one/' . $id);
     }
 
     public function actionDeleteNews($id)
     {
         $news = new NewsModel;
-        $news->deleteByPk($id);
+        $news->id = $id;
+        $news->delete();
         header('Location: /news/all');
     }
 }

@@ -16,6 +16,11 @@ abstract class AbstractModel
         return $this->data[$k];
     }
 
+    public function __isset($k)
+    {
+        return isset($this->data[$k]);
+    }
+
     public static function findAll()
     {
         $db = new DB();
@@ -59,7 +64,7 @@ abstract class AbstractModel
         $this->id = $db->dbh->lastInsertId();
     }
 
-    public function updateByPk($id)
+    public function update()
     {
         $cols = array_keys($this->data);
         $data = [];
@@ -74,12 +79,12 @@ abstract class AbstractModel
             ' . implode(', ', $upt) . '
             WHERE id = :id
         ';
-        $data[':id'] = $id;
+        $data[':id'] = $this->id;
         $db = new DB();
         $db->execute($sql, $data);
     }
 
-    public function deleteByPk($id)
+    public function delete()
     {
         $sql = '
             DELETE
@@ -87,6 +92,6 @@ abstract class AbstractModel
             WHERE id = :id
         ';
         $db = new DB();
-        $db->execute($sql, [':id' => $id]);
+        $db->execute($sql, [':id' => $this->id]);
     }
 }
