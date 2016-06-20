@@ -28,30 +28,4 @@ class AdminController
         $news->delete();
         header('Location: /news/all');
     }
-
-    public function actionException404($e)
-    {
-        $view = new View;
-        $view->errorMessage = $e->getMessage();
-        $view->errorCode = $e->getCode();
-        $view->display('error.php');
-    }
-
-    public function actionExceptionPDO($e)
-    {
-        $logError = new LogError($e->getMessage(), $e->getCode(), $e->getFile(), $e->getLine());
-        $logError->addLog();
-        $view = new View;
-        $view->errorMessage = 'Forbidden';
-        $view->errorCode = 403;
-        $view->display('error.php');
-    }
-
-    public function actionShowLogs()
-    {
-        $info = LogError::getLog();
-        $view = new View();
-        $view->rows = $info;
-        $view->display('/log.php');
-    }
 }

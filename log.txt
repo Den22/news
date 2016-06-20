@@ -33,3 +33,23 @@ SQLSTATE[42S22]: Column not found: 1054 Unknown column 'r' in 'field list'
 G:\OpenServer\domains\news\classes\DB.php
 20
 2016-06-20 20:26:42
+SQLSTATE[HY000] [1049] Unknown database 'newxs'
+1049
+G:\OpenServer\domains\news\classes\DB.php
+14
+2016-06-20 22:05:59
+SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: Этот хост неизвестен. 
+2002
+G:\OpenServer\domains\news\classes\DB.php
+14
+2016-06-20 22:34:04
+SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: Этот хост неизвестен. 
+2002
+G:\OpenServer\domains\news\classes\DB.php
+16
+2016-06-20 22:55:11
+SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: Этот хост неизвестен. 
+2002
+G:\OpenServer\domains\news\classes\DB.php
+16
+2016-06-20 22:57:39

@@ -20,18 +20,4 @@ class NewsController
         $view->item = $news;
         $view->display('news/one.php');
     }
-
-    public function actionShowAddForm()
-    {
-        $view = new View();
-        $view->display('news/add.php');
-    }
-
-    public function actionShowUpdateForm($id)
-    {
-        $news = NewsModel::findOneByPk($id);
-        $view = new View();
-        $view->item = $news;
-        $view->display('news/update.php');
-    }
 }

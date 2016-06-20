@@ -17,10 +17,10 @@ try {
     $controller = new $ClassName;
     $controller->$method($id);
 } catch (E404Exception $e) {
-    $controller = new AdminController;
+    $controller = new ErrorController;
     $controller->actionException404($e);
 } catch (PDOException $e) {
-    $controller = new AdminController;
+    $controller = new ErrorController;
     $controller->actionExceptionPDO($e);
 }
 

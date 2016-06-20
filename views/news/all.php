@@ -23,7 +23,7 @@
                     <td><?php echo $item->author ?></td>
                     <td><a href="<?php echo '/News/One/' . $item->id ?>"><?php echo $item->title ?></a></td>
                     <td><?php echo $item->datetime ?></td>
-                    <td><a href="<?php echo '/News/ShowUpdateForm/' . $item->id ?>">Изменить</a></td>
+                    <td><a href="<?php echo '/Show/UpdateForm/' . $item->id ?>">Изменить</a></td>
                     <td><a href="<?php echo '/Admin/DeleteNews/' . $item->id ?>">Удалить</a></td>
                 </tr>
                 <?php
@@ -31,10 +31,10 @@
         endif;
         ?>
     </table>
-    <div><a href="/News/ShowAddForm">Добавить новость</a></div>
+    <div><a href="/Show/AddForm">Добавить новость</a></div>
     <div>
         <h3>Админ-панель</h3>
-        <a href="/Admin/ShowLogs">Просмотр логов</a>
+        <a href="/Show/Logs">Просмотр логов</a>
     </div>
 </main>
 <footer></footer>

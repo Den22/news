@@ -8,7 +8,7 @@
 <header>
     <h1>News ticker</h1>
     <div><a href="/">Главная</a></div>
-    <div><a href="/News/ShowAddForm">Добавить новость</a></div>
+    <div><a href="/Show/AddForm">Добавить новость</a></div>
 </header>
 <main>
     <?php if (!empty($item)): ?>
@@ -17,7 +17,7 @@
         <div>Автор: <?php echo $item->author ?></div>
         <div>Время публикации: <?php echo $item->datetime ?></div>
         <div>
-            <a href="<?php echo '/News/ShowUpdateForm/' . $item->id ?>">Изменить</a>
+            <a href="<?php echo '/Show/UpdateForm/' . $item->id ?>">Изменить</a>
             <a href="<?php echo '/Admin/DeleteNews/' . $item->id ?>">Удалить</a>
         </div>
     <?php endif; ?>
