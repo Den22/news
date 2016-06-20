@@ -7,7 +7,6 @@
 <body>
 <header>
     <h1>News ticker</h1>
-    <div><a href="/News/ShowAddForm">Добавить новость</a></div>
 </header>
 <main>
     <table>
@@ -32,7 +31,11 @@
         endif;
         ?>
     </table>
-    <div><a href="/Admin/ShowLogs">Просмотр логов</a></div>
+    <div><a href="/News/ShowAddForm">Добавить новость</a></div>
+    <div>
+        <h3>Админ-панель</h3>
+        <a href="/Admin/ShowLogs">Просмотр логов</a>
+    </div>
 </main>
 <footer></footer>
 </body>

@@ -29,7 +29,7 @@ class AdminController
         header('Location: /news/all');
     }
 
-    public function actionException404()
+    public function actionException404($e)
     {
         $view = new View;
         $view->errorMessage = $e->getMessage();
@@ -39,12 +39,7 @@ class AdminController
 
     public function actionExceptionPDO($e)
     {
-        $logError = new LogError();
-        $logError->info['message'] = $e->getMessage();
-        $logError->info['code'] = $e->getCode();
-        $logError->info['file'] = $e->getFile();
-        $logError->info['line'] = $e->getLine();
-        $logError->info['datetime'] = date("Y-m-d H:i:s");
+        $logError = new LogError($e->getMessage(), $e->getCode(), $e->getFile(), $e->getLine());
         $logError->addLog();
         $view = new View;
         $view->errorMessage = 'Forbidden';

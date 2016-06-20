@@ -8,7 +8,6 @@ class NewsController
         $view = new View();
         $view->items = $news;
         $view->display('news/all.php');
-
     }
 
     public function actionOne($id)

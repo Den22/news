@@ -18,7 +18,7 @@ try {
     $controller->$method($id);
 } catch (E404Exception $e) {
     $controller = new AdminController;
-    $controller->actionException404();
+    $controller->actionException404($e);
 } catch (PDOException $e) {
     $controller = new AdminController;
     $controller->actionExceptionPDO($e);

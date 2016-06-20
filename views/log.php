@@ -18,11 +18,9 @@
     foreach ($rows as $row): ?>
         <tr>
             <td><?php echo $n ?></td>
-            <td><?php echo $row['0'] ?></td>
-            <td><?php echo $row['1'] ?></td>
-            <td><?php echo $row['2'] ?></td>
-            <td><?php echo $row['3'] ?></td>
-            <td><?php echo $row['4'] ?></td>
+            <?php foreach ($row as $r): ?>
+                <td><?php echo $r ?></td>
+            <?php endforeach; ?>
         </tr>
         <?php $n++;
     endforeach; ?>

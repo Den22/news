@@ -16,8 +16,10 @@
         <div><?php echo $item->text ?></div>
         <div>Автор: <?php echo $item->author ?></div>
         <div>Время публикации: <?php echo $item->datetime ?></div>
-        <div><a href="<?php echo '/News/ShowUpdateForm/' . $item->id ?>">Изменить</a></div>
-        <div><a href="<?php echo '/Admin/DeleteNews/' . $item->id ?>">Удалить</a></div>
+        <div>
+            <a href="<?php echo '/News/ShowUpdateForm/' . $item->id ?>">Изменить</a>
+            <a href="<?php echo '/Admin/DeleteNews/' . $item->id ?>">Удалить</a>
+        </div>
     <?php endif; ?>
 </main>
 <footer></footer>
