@@ -1,0 +1,30 @@
+SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: Этот хост неизвестен. 
+2002
+G:\OpenServer\domains\news\classes\DB.php
+14
+2016-06-20 18:48:24
+SQLSTATE[HY000] [1045] Access denied for user 'rodot'@'localhost' (using password: NO)
+1045
+G:\OpenServer\domains\news\classes\DB.php
+14
+2016-06-20 18:51:31
+SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+1045
+G:\OpenServer\domains\news\classes\DB.php
+14
+2016-06-20 18:53:45
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROMnews' at line 1
+42000
+G:\OpenServer\domains\news\classes\DB.php
+20
+2016-06-20 19:38:32
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FRcOM news' at line 1
+42000
+G:\OpenServer\domains\news\classes\DB.php
+20
+2016-06-20 19:45:08
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'news.newsa' doesn't exist
+42S02
+G:\OpenServer\domains\news\classes\DB.php
+20
+2016-06-20 20:01:28

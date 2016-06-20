@@ -32,6 +32,7 @@
         endif;
         ?>
     </table>
+    <div><a href="/Admin/ShowLogs">Просмотр логов</a></div>
 </main>
 <footer></footer>
 </body>

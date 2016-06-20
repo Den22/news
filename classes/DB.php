@@ -7,7 +7,11 @@ class DB
 
     public function __construct()
     {
-        $this->dbh = new PDO ('mysql:dbname=news;host=localhost', 'root', '');
+        $opt = array(
+            PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+        );
+        $this->dbh = new PDO ('mysql:dbname=news;host=localhost', 'root', '', $opt);
     }
 
     public function query($sql, $params = [])
