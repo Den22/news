@@ -21,20 +21,20 @@
                 ?>
                 <tr>
                     <td><?php echo $item->author ?></td>
-                    <td><a href="<?php echo '/News/One/' . $item->id ?>"><?php echo $item->title ?></a></td>
+                    <td><a href="<?php echo '/news/one/' . $item->id ?>"><?php echo $item->title ?></a></td>
                     <td><?php echo $item->datetime ?></td>
-                    <td><a href="<?php echo '/Show/UpdateForm/' . $item->id ?>">Изменить</a></td>
-                    <td><a href="<?php echo '/Admin/DeleteNews/' . $item->id ?>">Удалить</a></td>
+                    <td><a href="<?php echo '/show/updateForm/' . $item->id ?>">Изменить</a></td>
+                    <td><a href="<?php echo '/admin/deleteNews/' . $item->id ?>">Удалить</a></td>
                 </tr>
                 <?php
             endforeach;
         endif;
         ?>
     </table>
-    <div><a href="/Show/AddForm">Добавить новость</a></div>
+    <div><a href="/show/addForm">Добавить новость</a></div>
     <div>
         <h3>Админ-панель</h3>
-        <a href="/Show/Logs">Просмотр логов</a>
+        <a href="/show/logs">Просмотр логов</a>
     </div>
 </main>
 <footer></footer>

@@ -53,3 +53,8 @@ SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: Этот хост н
 G:\OpenServer\domains\news\classes\DB.php
 16
 2016-06-20 22:57:39
+SQLSTATE[HY000] [1045] Access denied for user 'rood'@'localhost' (using password: NO)
+1045
+G:\OpenServer\domains\news\classes\DB.php
+16
+2016-06-25 14:29:40

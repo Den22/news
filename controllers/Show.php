@@ -1,6 +1,12 @@
 <?php
 
-class ShowController
+namespace Application\Controllers;
+
+use Application\Models\News;
+use Application\Classes\View;
+use Application\Classes\LogError;
+
+class Show
 {
     public function actionAddForm()
     {
@@ -10,7 +16,7 @@ class ShowController
 
     public function actionUpdateForm($id)
     {
-        $news = NewsModel::findOneByPk($id);
+        $news = News::findOneByPk($id);
         $view = new View();
         $view->item = $news;
         $view->display('news/update.php');

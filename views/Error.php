@@ -7,6 +7,6 @@
 <body>
 <h1>Error <?php echo $errorCode ?></h1>
 <div><?php echo $errorMessage ?></div>
-<div><a href="/">Главная</a></div>
+<div><a href="/news/all">Главная</a></div>
 </body>
 </html>

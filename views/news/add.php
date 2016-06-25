@@ -7,10 +7,10 @@
 <body>
 <header>
     <h1>News ticker</h1>
-    <div><a href="/">Главная</a></div>
+    <div><a href="/news/all">Главная</a></div>
 </header>
 <main>
-    <form action="/Admin/AddNews" method="post">
+    <form action="/admin/addNews" method="post">
         <table>
             <tr>
                 <td><input type="text" name="title" id="title"></td>

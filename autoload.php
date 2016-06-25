@@ -2,11 +2,13 @@
 
 function __autoload($class)
 {
-    $folders = ['controllers', 'models', 'classes', 'views'];
-    foreach ($folders as $folder) {
-        $path = __DIR__ . '/' . $folder . '/' . $class . '.php';
-        if (file_exists($path)) {
-            require $path;
-        }
+    $classParts = explode('\\', $class);
+    $classParts[0] = __DIR__;
+    $path = implode(DIRECTORY_SEPARATOR, $classParts) . '.php';
+    if (file_exists($path)) {
+        require $path;
+    }
+    else {
+        throw new Application\classes\E404Exception('Page not found', 404);
     }
 }

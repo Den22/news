@@ -1,5 +1,7 @@
 <?php
 
+namespace Application\Models;
+
 /**
  * Class NewsModel
  * @property $title
@@ -7,7 +9,7 @@
  * @property $author
  * @property $datetime
  */
-class NewsModel
+class News
     extends AbstractModel
 {
     protected static $table = 'news';

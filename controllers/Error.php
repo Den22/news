@@ -1,6 +1,10 @@
 <?php
 
-class ErrorController
+namespace Application\Controllers;
+use Application\Classes\View;
+use Application\Classes\LogError;
+
+class Error
 {
     public function actionException404($e)
     {

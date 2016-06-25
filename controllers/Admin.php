@@ -1,10 +1,14 @@
 <?php
 
-class AdminController
+namespace Application\Controllers;
+
+use Application\Models\News;
+
+class Admin
 {
     public function actionAddNews()
     {
-        $news = new NewsModel;
+        $news = new News;
         $news->data = $_POST;
         $news->data['datetime'] = date("Y-m-d H:i:s");
         $news->insert();
@@ -13,7 +17,7 @@ class AdminController
 
     public function actionUpdateNews($id)
     {
-        $news = new NewsModel;
+        $news = new News;
         $news->data = $_POST;
         $news->data['datetime'] = date("Y-m-d H:i:s");
         $news->id = $id;
@@ -23,7 +27,7 @@ class AdminController
 
     public function actionDeleteNews($id)
     {
-        $news = new NewsModel;
+        $news = new News;
         $news->id = $id;
         $news->delete();
         header('Location: /news/all');

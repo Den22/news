@@ -25,6 +25,6 @@
         <?php $n++;
     endforeach; ?>
 </table>
-<div><a href="/">Главная</a></div>
+<div><a href="/news/all">Главная</a></div>
 </body>
 </html>

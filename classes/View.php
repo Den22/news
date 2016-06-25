@@ -1,5 +1,7 @@
 <?php
 
+namespace Application\Classes;
+
 class View
 {
     public $data = [];
@@ -20,7 +22,6 @@ class View
         foreach ($this->data as $key => $val) {
             $$key = $val;
         }
-
         ob_start();
         include __DIR__ . '/../views/' . $template;
         $content = ob_get_contents();

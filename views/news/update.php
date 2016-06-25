@@ -7,10 +7,10 @@
 <body>
 <header>
     <h1>News ticker</h1>
-    <div><a href="/">Главная</a></div>
+    <div><a href="/news/all">Главная</a></div>
 </header>
 <main>
-    <form action="<?php echo '/Admin/UpdateNews/' . $item->id ?>" method="post">
+    <form action="<?php echo '/admin/updateNews/' . $item->id ?>" method="post">
         <table>
             <tr>
                 <td><input type="text" name="title" id="title" value="<?php echo $item->title ?>"></td>
