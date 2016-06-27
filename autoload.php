@@ -1,6 +1,6 @@
 <?php
 
-function __autoload($class)
+function my_autoload($class)
 {
     $classParts = explode('\\', $class);
     $classParts[0] = __DIR__;
@@ -12,3 +12,7 @@ function __autoload($class)
         throw new Application\classes\E404Exception('Page not found', 404);
     }
 }
+
+spl_autoload_register('my_autoload');
+
+require __DIR__ . '/vendor/autoload.php';

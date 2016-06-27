@@ -26,5 +26,6 @@
     endforeach; ?>
 </table>
 <div><a href="/news/all">Главная</a></div>
+<div><a href="/admin/clearLogs">Очистить</a></div>
 </body>
 </html>

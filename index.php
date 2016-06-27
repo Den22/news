@@ -1,9 +1,11 @@
 <?php
 
 require __DIR__ . '/autoload.php';
+require __DIR__ . '/config.php';
 
 use Application\Controllers\Error;
 use Application\Classes\E404Exception;
+use Application\Classes\AllException;
 
 $request = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $parts = explode('/', trim($request, ' /'));
@@ -13,7 +15,7 @@ $act = !empty($parts['1']) ? ucfirst($parts['1']) : 'All';
 $id = !empty($parts['2']) ? ucfirst($parts['2']) : NULL;
 
 try {
-    $ClassName = 'Application\Controllers\\' . $ctrl;
+    $ClassName = 'Application\\Controllers\\' . $ctrl;
     $method = 'action' . $act;
     if (!method_exists($ClassName , $method)) {
         throw new E404Exception('Page not found', 404);
@@ -26,6 +28,9 @@ try {
 } catch (PDOException $e) {
     $controller = new Error;
     $controller->actionExceptionPDO($e);
+} catch (AllException $e) {
+    $controller = new Error;
+    $controller->actionExceptionAll($e);
 }
 
 
