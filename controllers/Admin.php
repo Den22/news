@@ -13,6 +13,7 @@ class Admin
         $news = new News;
         $news->data = $_POST;
         $news->data['datetime'] = date("Y-m-d H:i:s");
+//пример использования PHPMailer
 //        $mailer = new Mailer();
 //        $mailer->Mailer();
 //        $mailer->Subject = 'Добавлена новая новость';
