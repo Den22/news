@@ -7,7 +7,10 @@ use Application\Controllers\Error;
 use Application\Classes\E404Exception;
 use Application\Classes\AllException;
 
-//ПРимер использование twig
+$timer = new PHP_Timer();
+$timer->start();
+
+//Пример использование twig
 //use Application\Models\News;
 //$news = News::findAll();
 //
@@ -21,11 +24,7 @@ use Application\Classes\AllException;
 //    'title' => $title,
 //    'articles' => $news
 //]);
-//
 //die;
-
-
-
 
 $request = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $parts = explode('/', trim($request, ' /'));
@@ -52,6 +51,8 @@ try {
     $controller = new Error;
     $controller->actionExceptionAll($e);
 }
+echo $timer->stop();
+
 
 
 
