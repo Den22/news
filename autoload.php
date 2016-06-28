@@ -1,6 +1,6 @@
 <?php
 
-function my_autoload($class)
+function myAutoload($class)
 {
     $classParts = explode('\\', $class);
     $classParts[0] = __DIR__;
@@ -13,6 +13,6 @@ function my_autoload($class)
     }
 }
 
-spl_autoload_register('my_autoload');
+spl_autoload_register('myAutoload');
 
 require __DIR__ . '/vendor/autoload.php';

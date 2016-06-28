@@ -9,8 +9,7 @@ namespace Application\Models;
  * @property $author
  * @property $datetime
  */
-class News
-    extends AbstractModel
+class News extends AbstractModel
 {
     protected static $table = 'news';
 }

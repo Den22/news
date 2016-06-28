@@ -26,14 +26,17 @@ $timer->start();
 //]);
 //die;
 
-$request = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-$parts = explode('/', trim($request, ' /'));
-
-$ctrl = !empty($parts['0']) ? ucfirst($parts['0']) : 'News';
-$act = !empty($parts['1']) ? ucfirst($parts['1']) : 'All';
-$id = !empty($parts['2']) ? ucfirst($parts['2']) : NULL;
-
 try {
+    $request = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+    $parts = explode('/', trim($request, ' /'));
+    if (!empty($parts['3'])) {
+        throw new E404Exception('Page not found', 404);
+    }
+
+    $ctrl = !empty($parts['0']) ? ucfirst($parts['0']) : 'News';
+    $act = !empty($parts['1']) ? ucfirst($parts['1']) : 'All';
+    $id = !empty($parts['2']) ? ucfirst($parts['2']) : null;
+
     $ClassName = 'Application\\Controllers\\' . $ctrl;
     $method = 'action' . $act;
     if (!method_exists($ClassName , $method)) {
@@ -52,7 +55,6 @@ try {
     $controller->actionExceptionAll($e);
 }
 echo $timer->stop();
-
 
 
 

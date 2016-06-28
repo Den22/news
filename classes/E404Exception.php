@@ -2,7 +2,6 @@
 
 namespace Application\Classes;
 
-class E404Exception
-    extends \Exception
+class E404Exception extends \Exception
 {
 }

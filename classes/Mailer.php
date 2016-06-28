@@ -4,8 +4,7 @@ namespace Application\Classes;
 
 use PHPMailer\PHPMailer\PHPMailer;
 
-class Mailer
-    extends PHPMailer
+class Mailer extends PHPMailer
 {
     public $priority = 3;
     public $to_name;

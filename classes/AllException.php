@@ -2,8 +2,7 @@
 
 namespace Application\Classes;
 
-class AllException
-    extends \Exception
+class AllException extends \Exception
 {
 
 }

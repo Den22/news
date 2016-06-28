@@ -2,9 +2,9 @@
 
 namespace Application\Controllers;
 
-use Application\Classes\AllException;
+//use Application\Classes\AllException;
+//use Application\Classes\Mailer;
 use Application\Models\News;
-use Application\Classes\Mailer;
 
 class Admin
 {
